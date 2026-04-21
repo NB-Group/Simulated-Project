@@ -41,7 +41,7 @@ public class BalloonBurnerSoundInstance extends AbstractTickableSoundInstance {
     private float meanVolume = 0;
 
     public BalloonBurnerSoundInstance(SoundEvent sound) {
-        super(sound, SoundSource.AMBIENT, RandomSource.create());
+        super(sound, SoundSource.BLOCKS, RandomSource.create());
         this.looping = true;
         this.delay = 0;
         this.volume = 0.001f;

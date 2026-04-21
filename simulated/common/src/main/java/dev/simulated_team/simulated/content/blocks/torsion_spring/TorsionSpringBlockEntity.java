@@ -225,6 +225,11 @@ public class TorsionSpringBlockEntity extends KineticBlockEntity implements Extr
                     this.sequencedAngleLimit = Math.max(0, this.sequencedAngleLimit - Math.abs(angularSpeed));
 
                 this.angle += angularSpeed;
+                
+                // Send block update to notify comparators of angle change
+                if (this.level != null && !this.level.isClientSide) {
+                    this.level.updateNeighborsAt(this.parent.getBlockPos(), this.parent.getBlockState().getBlock());
+                }
 
                 if (this.rotationProgressTicks == this.rotationDurationTicks) {
                     this.sequenceContext = null;
