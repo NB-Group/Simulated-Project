@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(export https_proxy=http://127.0.0.1:7890)",
+      "Bash(export http_proxy=http://127.0.0.1:7890)",
+      "Bash(gh issue:*)"
+    ]
+  }
+}
